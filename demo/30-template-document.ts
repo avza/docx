@@ -12,15 +12,28 @@ fs.readFile(filePath, (err, data) => {
     }
 
     importDotx.extract(data).then((templateDocument) => {
+        // NOTE: this `Document` class is really the File class from `/src/file/file.ts`
+
+        // Map headers to known keys (default, first, even)
+        const templateHeaders = ImportDotx.getHeaders(templateDocument);
+        const templateFooters = ImportDotx.getFooters(templateDocument);
+
         const doc = new Document(
             {
                 sections: [
                     {
+                        headers: templateHeaders,
+                        footers: templateFooters,
                         properties: {
                             titlePage: templateDocument.titlePageIsDefined,
                         },
                         children: [new Paragraph("Hello World")],
                     },
+                    {
+                        headers: templateHeaders,
+                        footers: templateFooters,
+                        children: [new Paragraph("Hello page 2")],
+                    }
                 ],
             },
             {

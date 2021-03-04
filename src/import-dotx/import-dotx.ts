@@ -71,6 +71,22 @@ export class ImportDotx {
         return templateDocument;
     }
 
+    public static getHeaders(template: IDocumentTemplate): Record<string, HeaderWrapper> {
+        const templateHeaders: Record<string, HeaderWrapper> = {};
+        template.headers.forEach((h) => {
+            templateHeaders[h.type] = h.header;
+        });
+        return templateHeaders;
+    }
+
+    public static getFooters(template: IDocumentTemplate): Record<string, FooterWrapper> {
+        const templateFooters: Record<string, FooterWrapper> = {};
+        template.footers.forEach((f) => {
+            templateFooters[f.type] = f.footer;
+        });
+        return templateFooters;
+    }
+
     private async createFooters(
         zipContent: JSZip,
         documentRefs: IDocumentRefs,
