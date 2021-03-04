@@ -28,14 +28,14 @@ import { TableOfContents } from "./table-of-contents";
 
 export interface ISectionOptions {
     readonly headers?: {
-        readonly default?: Header;
-        readonly first?: Header;
-        readonly even?: Header;
+        readonly default?: Header | HeaderWrapper;
+        readonly first?: Header | HeaderWrapper;
+        readonly even?: Header | HeaderWrapper;
     };
     readonly footers?: {
-        readonly default?: Footer;
-        readonly first?: Footer;
-        readonly even?: Footer;
+        readonly default?: Footer | FooterWrapper;
+        readonly first?: Footer | FooterWrapper;
+        readonly even?: Footer | FooterWrapper;
     };
     readonly size?: IPageSizeAttributes;
     readonly margins?: IPageMarginAttributes;
@@ -163,14 +163,14 @@ export class File {
         this.documentWrapper.View.Body.addSection({
             ...properties,
             headers: {
-                default: headers.default ? this.createHeader(headers.default) : this.createHeader(new Header()),
-                first: headers.first ? this.createHeader(headers.first) : undefined,
-                even: headers.even ? this.createHeader(headers.even) : undefined,
+                default: headers.default ? this.getHeaderWrapper(headers.default) : this.createHeader(new Header()),
+                first: headers.first ? this.getHeaderWrapper(headers.first) : undefined,
+                even: headers.even ? this.getHeaderWrapper(headers.even) : undefined,
             },
             footers: {
-                default: footers.default ? this.createFooter(footers.default) : this.createFooter(new Footer()),
-                first: footers.first ? this.createFooter(footers.first) : undefined,
-                even: footers.even ? this.createFooter(footers.even) : undefined,
+                default: footers.default ? this.getFooterWrapper(footers.default) : this.createFooter(new Footer()),
+                first: footers.first ? this.getFooterWrapper(footers.first) : undefined,
+                even: footers.even ? this.getFooterWrapper(footers.even) : undefined,
             },
             ...margins,
             ...size,
@@ -187,6 +187,14 @@ export class File {
         }
     }
 
+    private getHeaderWrapper(headerOrWrapper: Header | HeaderWrapper): HeaderWrapper {
+        if (headerOrWrapper instanceof HeaderWrapper){
+            return headerOrWrapper;
+        } else {
+            return this.createHeader(headerOrWrapper);
+        }
+    }
+
     private createHeader(header: Header): HeaderWrapper {
         const wrapper = new HeaderWrapper(this.media, this.currentRelationshipId++);
 
@@ -196,6 +204,14 @@ export class File {
 
         this.addHeaderToDocument(wrapper);
         return wrapper;
+    }
+
+    private getFooterWrapper(footerOrWrapper: Footer | FooterWrapper): FooterWrapper {
+        if (footerOrWrapper instanceof FooterWrapper){
+            return footerOrWrapper;
+        } else {
+            return this.createFooter(footerOrWrapper);
+        }
     }
 
     private createFooter(footer: Footer): FooterWrapper {
