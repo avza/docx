@@ -13,6 +13,7 @@ const configuration: Configuration = {
         library: "docx",
         globalObject: "this",
     },
+    devtool: "source-map",
 
     resolve: {
         extensions: [".ts", ".js"],
