@@ -150,11 +150,13 @@ export class File {
         this.documentWrapper.View.Body.addSection({
             ...properties,
             headerWrapperGroup: {
+                // default: headers.default ? this.getHeaderWrapper(headers.default) : undefined,
                 default: headers.default ? this.getHeaderWrapper(headers.default) : undefined,
                 first: headers.first ? this.getHeaderWrapper(headers.first) : undefined,
                 even: headers.even ? this.getHeaderWrapper(headers.even) : undefined,
             },
             footerWrapperGroup: {
+                // default: footers.default ? this.getFooterWrapper(footers.default) : undefined,
                 default: footers.default ? this.getFooterWrapper(footers.default) : undefined,
                 first: footers.first ? this.getFooterWrapper(footers.first) : undefined,
                 even: footers.even ? this.getFooterWrapper(footers.even) : undefined,
@@ -166,7 +168,7 @@ export class File {
         }
     }
 
-    private getHeaderWrapper(headerOrWrapper: Header | HeaderWrapper): HeaderWrapper {
+    private getHeaderWrapper(headerOrWrapper: Header | HeaderWrapper): HeaderWrapper | undefined {
         if (headerOrWrapper instanceof HeaderWrapper){
             return headerOrWrapper;
         } else {
@@ -185,7 +187,7 @@ export class File {
         return wrapper;
     }
 
-    private getFooterWrapper(footerOrWrapper: Footer | FooterWrapper): FooterWrapper {
+    private getFooterWrapper(footerOrWrapper: Footer | FooterWrapper): FooterWrapper | undefined {
         if (footerOrWrapper instanceof FooterWrapper){
             return footerOrWrapper;
         } else {

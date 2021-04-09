@@ -71,6 +71,10 @@ export class ImportDotx {
         return templateDocument;
     }
 
+    /**
+     * 2021-04-09
+     * CFH: Add helper to extract the headers defined in the template.
+     */
     public static getHeaders(template: IDocumentTemplate): Record<string, HeaderWrapper> {
         const templateHeaders: Record<string, HeaderWrapper> = {};
         template.headers.forEach((h) => {
@@ -79,6 +83,10 @@ export class ImportDotx {
         return templateHeaders;
     }
 
+    /**
+     * 2021-04-09
+     * CFH: Add helper to extract the footers defined in the template.
+     */
     public static getFooters(template: IDocumentTemplate): Record<string, FooterWrapper> {
         const templateFooters: Record<string, FooterWrapper> = {};
         template.footers.forEach((f) => {
