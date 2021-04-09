@@ -62,3 +62,8 @@ tmp
 
 # nyc
 .nyc_output
+
+# Word temporary
+~$*.doc*
+~$*.dot*
+/__exclude
