@@ -1,0 +1,19 @@
+
+When loading the original test .dotx it *is* possible to reuse the template header/footer definitions.
+
+When running my custom test it *is not* possible to reuse header/footer definitions.
+ - I don't know why, maybe because I used the built-in Word themes?
+ - with my customisation it's possible to pass 'EMPTY' and have it fall-back to the default header/footer.
+ - but, the `first`, `default`, `even` combinations are not working as expected
+   - it only uses `first` and `even` and doesn't seem to use the default header for the left-hand page
+     (I haven't looked at the generated content for that scenario yet).
+
+ - TODO: Try using just a plain header template instead of the theme
+ - Compare the original template file against my attempt (it did help me discover some issues with my first attempt)
+
+
+Schema docs:
+ - http://officeopenxml.com/anatomyofOOXML.php
+ - http://officeopenxml.com/WPheaders.php
+
+Remember: The `Open XML SDK 2.5 Productivity Tool for Microsoft Office` can diff the structure of .docx files too.
