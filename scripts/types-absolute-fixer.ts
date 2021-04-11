@@ -4,7 +4,7 @@ import * as replace from "replace-in-file";
 const files = glob.sync("build/**/*.d.ts");
 
 for (const file of files) {
-    replace({
+    replace.replaceInFile({
         files: file,
         from: /"file[a-z/-]*"/gi,
         to: (match) => {
