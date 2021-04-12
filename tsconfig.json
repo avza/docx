@@ -1,6 +1,6 @@
 {
     "compilerOptions": {
-        "target": "es6",
+        "target": "es5",
         "strictNullChecks": true,
         "sourceMap": true,
         "removeComments": true,
@@ -13,12 +13,14 @@
 //        "noUnusedParameters": true,
         "noUnusedLocals": false,
         "noUnusedParameters": false,
+        "downlevelIteration": true,
         "baseUrl": "./src",
         "paths": {
             "/*": ["./*"],
             "convenience-functions": ["./convenience-functions"],
             "@export/*": ["./export/*"]
-        }
+        },
+        "traceResolution": false
     },
     "include": ["src"]
 }

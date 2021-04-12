@@ -4,7 +4,7 @@
   "description": "Easily generate .docx files with JS/TS with a nice declarative API. Works for Node and on the Browser.",
   "main": "build/index.js",
   "scripts": {
-    "wiwo-webpack": "npm run webpack -- --mode=development",
+    "wiwo-webpack": "webpack --config ./webpack.config.ts --mode=development && npm run fix-types",
     "wiwo-startFile": "ts-node --project tsconfig.json",
     "pretest": "rimraf ./build",
     "test": "mocha -r ts-node/register -r tsconfig-paths/register \"src/**/*.ts\"",
@@ -64,11 +64,16 @@
   },
   "homepage": "https://github.com/dolanmiu/docx#readme",
   "devDependencies": {
+    "@babel/core": "^7.4.5",
+    "@babel/plugin-transform-exponentiation-operator": "^7.12.13",
+    "@babel/plugin-transform-parameters": "^7.13.0",
+    "@babel/preset-env": "^7.13.15",
     "@types/chai": "^4.2.15",
     "@types/mocha": "^8.0.0",
     "@types/request-promise": "^4.1.42",
     "@types/sinon": "^9.0.4",
     "@types/webpack": "^5.0.0",
+    "babel-loader": "^8.2.2",
     "buffer": "^6.0.3",
     "chai": "^3.5.0",
     "docsify-cli": "^4.3.0",
@@ -99,5 +104,9 @@
   },
   "engines": {
     "node": ">=10"
-  }
+  },
+  "browserslist": [
+    "since 2015",
+    "IE 11"
+  ]
 }

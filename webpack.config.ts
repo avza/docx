@@ -12,6 +12,15 @@ const configuration: Configuration = {
         libraryTarget: "umd",
         library: "docx",
         globalObject: "this",
+        environment: {
+            arrowFunction: false,
+            bigIntLiteral: false,
+            const: true,
+            destructuring: false,
+            dynamicImport: false,
+            forOf: false,
+            module: false,
+        },
     },
     devtool: "source-map",
 
@@ -25,7 +34,24 @@ const configuration: Configuration = {
     },
 
     module: {
+
         rules: [
+            {
+                test: /\.(js|cjs|mjs)$/,
+                exclude: function (modulePath) {
+                    // // Normalise windows paths to "/" for testing
+                    // const posixPath = (''+modulePath).split('\\').join(path.posix.sep);
+                    // console.log(`(WEBPACK) posixPath=`, posixPath);
+
+                    // Transpile *all* node_modules for IE11 compatibility
+                    return false;
+                },
+                use: [
+                    {
+                        loader: require.resolve('babel-loader'),
+                    }
+                ],
+            },
             {
                 test: /\.ts$/,
                 loader: "ts-loader",
