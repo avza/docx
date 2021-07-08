@@ -1,0 +1,34 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.BorderStyle = void 0;
+var BorderStyle;
+(function (BorderStyle) {
+    BorderStyle["SINGLE"] = "single";
+    BorderStyle["DASH_DOT_STROKED"] = "dashDotStroked";
+    BorderStyle["DASHED"] = "dashed";
+    BorderStyle["DASH_SMALL_GAP"] = "dashSmallGap";
+    BorderStyle["DOT_DASH"] = "dotDash";
+    BorderStyle["DOT_DOT_DASH"] = "dotDotDash";
+    BorderStyle["DOTTED"] = "dotted";
+    BorderStyle["DOUBLE"] = "double";
+    BorderStyle["DOUBLE_WAVE"] = "doubleWave";
+    BorderStyle["INSET"] = "inset";
+    BorderStyle["NIL"] = "nil";
+    BorderStyle["NONE"] = "none";
+    BorderStyle["OUTSET"] = "outset";
+    BorderStyle["THICK"] = "thick";
+    BorderStyle["THICK_THIN_LARGE_GAP"] = "thickThinLargeGap";
+    BorderStyle["THICK_THIN_MEDIUM_GAP"] = "thickThinMediumGap";
+    BorderStyle["THICK_THIN_SMALL_GAP"] = "thickThinSmallGap";
+    BorderStyle["THIN_THICK_LARGE_GAP"] = "thinThickLargeGap";
+    BorderStyle["THIN_THICK_MEDIUM_GAP"] = "thinThickMediumGap";
+    BorderStyle["THIN_THICK_SMALL_GAP"] = "thinThickSmallGap";
+    BorderStyle["THIN_THICK_THIN_LARGE_GAP"] = "thinThickThinLargeGap";
+    BorderStyle["THIN_THICK_THIN_MEDIUM_GAP"] = "thinThickThinMediumGap";
+    BorderStyle["THIN_THICK_THIN_SMALL_GAP"] = "thinThickThinSmallGap";
+    BorderStyle["THREE_D_EMBOSS"] = "threeDEmboss";
+    BorderStyle["THREE_D_ENGRAVE"] = "threeDEngrave";
+    BorderStyle["TRIPLE"] = "triple";
+    BorderStyle["WAVE"] = "wave";
+})(BorderStyle = exports.BorderStyle || (exports.BorderStyle = {}));
+//# sourceMappingURL=border-style.js.map

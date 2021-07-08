@@ -1,0 +1,1 @@
+{"version":3,"file":"initializable-xml-component.js","sourceRoot":"","sources":["../../../src/file/xml-components/initializable-xml-component.ts"],"names":[],"mappings":";;;AAAA,wDAAmD;AAEnD,MAAsB,yBAA0B,SAAQ,6BAAY;IAChE,YAAY,OAAe,EAAE,aAAyC;QAClE,KAAK,CAAC,OAAO,CAAC,CAAC;QAEf,IAAI,aAAa,EAAE;YACf,IAAI,CAAC,IAAI,GAAG,aAAa,CAAC,IAAI,CAAC;SAClC;IACL,CAAC;CACJ;AARD,8DAQC"}

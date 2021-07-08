@@ -1,0 +1,1 @@
+{"version":3,"file":"app-properties.js","sourceRoot":"","sources":["../../../src/file/app-properties/app-properties.ts"],"names":[],"mappings":";;;AAAA,wDAAmD;AACnD,2EAAsE;AAEtE,MAAa,aAAc,SAAQ,6BAAY;IAC3C;QACI,KAAK,CAAC,YAAY,CAAC,CAAC;QAEpB,IAAI,CAAC,IAAI,CAAC,IAAI,CACV,IAAI,mDAAuB,CAAC;YACxB,KAAK,EAAE,2EAA2E;YAClF,EAAE,EAAE,sEAAsE;SAC7E,CAAC,CACL,CAAC;IACN,CAAC;CACJ;AAXD,sCAWC"}
